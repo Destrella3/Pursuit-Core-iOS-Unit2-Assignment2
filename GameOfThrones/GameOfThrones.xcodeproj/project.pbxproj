@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D229219F70EA00B5753A /* AppDelegate.swift */; };
-		57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D22B219F70EA00B5753A /* ViewController.swift */; };
+		57D0D22C219F70EA00B5753A /* GOTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D22B219F70EA00B5753A /* GOTViewController.swift */; };
 		57D0D22F219F70EA00B5753A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D22D219F70EA00B5753A /* Main.storyboard */; };
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
+		620865D521A31DD70082FDA3 /* GOTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620865D421A31DD70082FDA3 /* GOTCell.swift */; };
+		620DB75021A0A0D8006092AE /* GOTDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620DB74F21A0A0D8006092AE /* GOTDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57D0D226219F70EA00B5753A /* GameOfThrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D0D229219F70EA00B5753A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57D0D22B219F70EA00B5753A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57D0D22B219F70EA00B5753A /* GOTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTViewController.swift; sourceTree = "<group>"; };
 		57D0D22E219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D0D230219F70EA00B5753A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		620865D421A31DD70082FDA3 /* GOTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTCell.swift; sourceTree = "<group>"; };
+		620DB74F21A0A0D8006092AE /* GOTDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		57D0D228219F70EA00B5753A /* GameOfThrones */ = {
 			isa = PBXGroup;
 			children = (
-				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
-				57D0D22B219F70EA00B5753A /* ViewController.swift */,
-				57D0D22D219F70EA00B5753A /* Main.storyboard */,
-				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
-				57D0D230219F70EA00B5753A /* Assets.xcassets */,
-				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
+				620DB74E21A094F1006092AE /* Model */,
+				620DB74B21A09451006092AE /* Views */,
+				620DB74C21A0946E006092AE /* Controllers */,
+				620DB74D21A094BE006092AE /* Support */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
 			);
 			path = GameOfThrones;
+			sourceTree = "<group>";
+		};
+		620DB74B21A09451006092AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		620DB74C21A0946E006092AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22B219F70EA00B5753A /* GOTViewController.swift */,
+				620DB74F21A0A0D8006092AE /* GOTDetailController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		620DB74D21A094BE006092AE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
+				57D0D230219F70EA00B5753A /* Assets.xcassets */,
+				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		620DB74E21A094F1006092AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+				620865D421A31DD70082FDA3 /* GOTCell.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
-				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
+				620DB75021A0A0D8006092AE /* GOTDetailController.swift in Sources */,
+				620865D521A31DD70082FDA3 /* GOTCell.swift in Sources */,
+				57D0D22C219F70EA00B5753A /* GOTViewController.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +327,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8B3K38L4MX;
 				INFOPLIST_FILE = GameOfThrones/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +346,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8B3K38L4MX;
 				INFOPLIST_FILE = GameOfThrones/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
