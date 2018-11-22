@@ -55,23 +55,33 @@ extension GOTViewController: UITableViewDataSource{
         return gotEpisodes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    fileprivate func extractedFunc(_ indexPath: IndexPath) -> UITableViewCell {
         let got = gotEpisodes[indexPath.row]
         if got.season % 2 == 0 {
-        guard let cell = mainTableView.dequeueReusableCell(withIdentifier: "GoTCell", for: indexPath) as? GOTCell else {return UITableViewCell()}
-        let episodeToSet = gotEpisodes[indexPath.row]
-        cell.gotImage.image = UIImage(named: episodeToSet.originalImageID)
-        cell.gotName.text = episodeToSet.name
-        cell.gotSeasonAndEpisode.text = "S:\(episodeToSet.season) E:\(episodeToSet.number)"
-        return cell
+            guard let cell = mainTableView.dequeueReusableCell(withIdentifier: "GoTCell", for: indexPath) as? GOTCell else {return UITableViewCell()}
+            let episodeToSet = gotEpisodes[indexPath.row]
+            cell.gotImage.image = UIImage(named: episodeToSet.originalImageID)
+            cell.gotName.text = episodeToSet.name
+            cell.gotSeasonAndEpisode.text = "S:\(episodeToSet.season) E:\(episodeToSet.number)"
+            //            let seasonsToSetUp = arrayOfSeasons[indexPath.section][indexPath.row]
+            //            cell.textLabel?.text = seasonsToSetUp
+            //            cell.detailTextLabel?.text = "this is in row: \(indexPath.row)"
+            return cell
         } else {
             guard let cell = mainTableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? GOTCell else {return UITableViewCell()}
             let episodeToSet = gotEpisodes[indexPath.row]
             cell.gotImage.image = UIImage(named: episodeToSet.originalImageID)
             cell.gotName.text = episodeToSet.name
             cell.gotSeasonAndEpisode.text = "S:\(episodeToSet.season) E:\(episodeToSet.number)"
+            //            let seasonsToSetUp = arrayOfSeasons[indexPath.section][indexPath.row]
+            //            cell.textLabel?.text = seasonsToSetUp
+            //            cell.detailTextLabel?.text = "this is in row: \(indexPath.row)"
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return extractedFunc(indexPath)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,13 +89,19 @@ extension GOTViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Season \(section + 1)"
+        
+        switch section {
+        case 0:
+            return "Season \(section + 1)"
+        default:
+           return "Unkown"
+        }
     }
 }
 
 extension GOTViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 140
     }
 }
 
